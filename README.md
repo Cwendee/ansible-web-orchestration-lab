@@ -11,7 +11,7 @@ This repository documents a hands-on project in **Infrastructure as Code (IaC)**
 ## 🏗️ System Architecture
 To demonstrate scalability, I designed a 1-to-2 orchestration flow. This ensures that configurations remain consistent across a fleet of servers simultaneously.
 
-![Architecture](/images/load-balancer-architecture.png)
+![Architecture](/images/ansible-lab-architecture.png)
 
 ## 🎯 Project Goals
 * **Automate** the installation of Apache (httpd) and Git.
