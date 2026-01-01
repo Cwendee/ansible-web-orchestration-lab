@@ -1,45 +1,41 @@
-# Ansible Web Orchestration Lab 🚀
+---
+title: "Automated Multi-Node Infrastructure"
+date: 2025-12-28
+layout: "single"
+summary: "Moving from manual configurations to automated orchestration with Ansible on AWS."
+github_link: "https://github.com/Cwendee/ansible-web-orchestration-lab"
+---
 
 This repository documents a hands-on project in **Infrastructure as Code (IaC)**. I built a multi-node environment where a single Ansible Master node orchestrates the deployment and deep customization of professional web servers across an AWS EC2 cluster.
 
+## 🏗️ System Architecture
+To demonstrate scalability, I designed a 1-to-2 orchestration flow. This ensures that configurations remain consistent across a fleet of servers simultaneously.
 
+![Architecture](/images/architecture.png)
 
 ## 🎯 Project Goals
-* **Automate** the installation of Apache (`httpd`) and Git across multiple RHEL/Amazon Linux nodes.
-* **Deploy** a professional Bootstrap portfolio theme directly from a remote GitHub repository.
-* **Orchestrate** surgical content changes (Title, Sub-heading, and Avatar) across the cluster using the Ansible `replace` module with Regex.
-* **Ensure Idempotency** to guarantee consistent states across the entire infrastructure.
+* **Automate** the installation of Apache (httpd) and Git.
+* **Deploy** a professional Bootstrap portfolio theme from GitHub.
+* **Orchestrate** surgical content changes using Ansible and Regex.
+* **Ensure Idempotency** across the entire infrastructure.
 
 ## 🛠 Tech Stack
 * **Configuration Management:** Ansible
 * **Infrastructure:** AWS EC2
 * **Web Server:** Apache (httpd)
-* **Search/Replace:** Regular Expressions (Regex)
 * **Version Control:** Git
 
-## 📂 Project Structure
-* `setup_webserver.yml`: The main automation playbook.
-* `inventory.ini`: Defined server list and SSH connection parameters (IPs redacted for security).
-* `.gitignore`: Security filters to prevent sensitive files (like `.pem` keys) from being tracked.
-* `README.md`: Project documentation.
+## 🚀 Execution & Verification
+The following terminal output demonstrates the Ansible playbook running across the inventory. Notice the "changed" status, indicating the successful application of the desired state.
 
-## 📸 Results
-### Terminal Execution
-*The screenshot below shows the successful execution of the playbook, highlighting the "Changed" status for the customization tasks.*
+![Terminal](/images/terminal.png)
 
-![Ansible Terminal Output](terminal_output.png)
+### Live Service Verification
+Once the orchestration was complete, I verified the deployment by accessing the public DNS of the managed nodes. 
 
-### Final Customized Website
-*The final result showing the "MY ANSIBLE CLUSTER" title, custom sub-heading, and AI-generated avatar.*
+![Webpage](/images/webpage.png)
 
-![Web Server Result](website_result.png)
-
-## 🚀 Key Learning Moments
-During this lab, I successfully navigated:
-1. **SSH Key Management:** Established secure communication between cloud instances.
-2. **Regex Implementation:** Used `(?i)` flags to handle case-insensitive text replacement at scale.
-3. **Module Compatibility:** Resolved errors regarding unsupported parameters in older Ansible versions.
-4. **Security Best Practices:** Implemented `.gitignore` and redacted sensitive IP addresses for public documentation.
-
----
-*Developed as a hands-on lab to master Cloud Automation and DevOps best practices.*
+## 💡 Key Learning Moments
+1. **SSH Key Management:** Secure communication between cloud instances.
+2. **Regex Implementation:** Handle case-insensitive text replacement.
+3. **Security Best Practices:** Redacted sensitive IP addresses.
